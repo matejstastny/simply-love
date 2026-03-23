@@ -33,7 +33,8 @@ return Def.ActorFrame{
 					self:diffusealpha(0)
 				end
 			end
-			self:visible(topscreen ~= "ScreenCRTTestPatterns")
+			local hiddenScreens = {ScreenCRTTestPatterns=true, ScreenEvaluationStage=true, ScreenEvaluationNonstop=true, ScreenEvaluationSummary=true}
+			self:visible(not hiddenScreens[topscreen])
 		end,
 		ColorSelectedMessageCommand=function(self)
 			if ThemePrefs.Get("VisualStyle") == "SRPG9" then
