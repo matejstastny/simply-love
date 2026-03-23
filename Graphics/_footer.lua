@@ -5,7 +5,7 @@ local light = {0.65,0.65,0.65,1}
 return Def.Quad{
 	Name="Footer",
 	InitCommand=function(self)
-		self:draworder(90):zoomto(_screen.w, 32):vertalign(bottom):y(32)
+		self:draworder(90):zoomto(_screen.w, 32):vertalign(bottom):y(32):visible(false)
 		if ThemePrefs.Get("VisualStyle") == "SRPG9" then
 			self:diffuse(GetCurrentColor(true))
 		elseif DarkUI() then
